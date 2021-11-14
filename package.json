@@ -1,0 +1,15 @@
+{
+  "name": "nexus-coop-webpage",
+  "version": "0.0.1",
+  "description": "webpage used for NexusCoop, powered by VuePress-next.",
+  "main": "index.js",
+  "author": "MengLuoRJ <mengluor@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.27"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}

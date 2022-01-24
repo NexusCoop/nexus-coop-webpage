@@ -20,10 +20,16 @@ module.exports = {
         logo: '/images/Nexus_Coop_Logo_Nav.png',
         logoDark: null,
         darkMode: true,
+        docsRepo: 'https://github.com/MengLuoRJ/nexus-coop-webpage',
+        editLink: false,
         locales: {
             '/': {
                 selectLanguageName: '简体中文',
-                selectLanguageText: '语言'
+                selectLanguageText: '语言',
+                lastUpdatedText: '最后更新',
+                contributorsText: '贡献者',
+                notFound: ['🎉 该页面不存在。'],
+                backToHome: '回到首页'
             },
             '/en/': {
                 selectLanguageName: 'English',
@@ -58,12 +64,12 @@ module.exports = {
                 children: [
                     { text: '时空枢纽概览', link: '/nexus-coop/' },
                     { text: '游戏模式', children: [
-                        { text: '合作模式', link: '/nexus-coop/coop' },
-                        { text: '时空战场', link: '/nexus-coop/space-battlefield/' },
-                        { text: '试炼之地', link: '/nexus-coop/trainning-ground/' },
-                        { text: '勇敢者游戏', link: '/nexus-coop/vincengt-game/' },
-                        { text: '随机突变挑战', link: '/nexus-coop/rmc/' },
-                        { text: '灾难之轮', link: '/nexus-coop/wmc/' },
+                        { text: '合作模式', link: '/nexus-coop/coop.html' },
+                        { text: '时空战场', link: '/nexus-coop/space-battlefield.html' },
+                        { text: '试炼之地', link: '/nexus-coop/trainning-ground.html' },
+                        { text: '勇敢者游戏', link: '/nexus-coop/vincengt-game.html' },
+                        { text: '随机突变挑战', link: '/nexus-coop/rmc.html' },
+                        { text: '灾难之轮', link: '/nexus-coop/wmc.html' },
                         { text: '克洛诺斯神殿', link: '/chrono-temple/' },
                         { text: '特别活动', link: '/activity/' }
                     ]},
@@ -74,7 +80,22 @@ module.exports = {
                 children: [
                     { text: '地图概览', link: '/map/' },
                     { text: '游戏地图', children: [
-                        { text: '维度', link: '/map/dimension/' },
+                        { text: '铁甲钢拳', link: '/map/promethus.html' },
+                        { text: '黑暗杀星', link: '/map/scythe-of-amon.html' },
+                        { text: '聚铁成兵', link: '/map/part-and-parcel.html' },
+                        { text: '机会渺茫', link: '/map/mist-opportunities.html' },
+                        { text: '湮灭快车', link: '/map/oblivion-express.html' },
+                        { text: '天界封锁', link: '/map/lock-and-load.html' },
+                        { text: '升格之链', link: '/map/chain-of-ascension.html' },
+                        { text: '克哈裂缝', link: '/map/rifts-to-korhal.html' },
+                        { text: '虚空降临', link: '/map/void-launch.html' },
+                        { text: '亡者之夜', link: '/map/dead-of-night.html/' },
+                        { text: '营救矿工', link: '/map/miner-evacuation.html' },
+                        { text: '净网行动', link: '/map/malwarfare.html' },
+                        { text: '往日神庙', link: '/map/temple-of-the-past.html' },
+                        { text: '熔火危机', link: '/map/the-vermillion-problem.html' },
+                        { text: '虚空撕裂', link: '/map/void-thrashing.html' },
+                        { text: '天幕危机', link: '/map/skyfall.html' },
                     ]},
                 ]
             },
@@ -107,12 +128,13 @@ module.exports = {
             },
             { 
                 text: '秘密档案', 
-                link: '/secret/'
+                link: '/secret/document/'
             },
             {
                 text: '关于',
                 link: '/about/'
             }
-        ]
+        ],
+        sidebar: 'auto'
     },
 }

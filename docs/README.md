@@ -5,13 +5,13 @@ heroTexxt: 时空枢纽
 tagline: Nexus Coop
 actions:
   - text: 合作模式
-    link: /coop/
+    link: /nexus-coop/
     type: primary
   - text: 指挥官
     link: /commander/
     type: secondary
   - text: 秘密档案
-    link: /secret/
+    link: /secret/document/
     type: secondary
 footer: Copyright © 2018-2022 NexusCoop Development Team.
 footerHtml: true

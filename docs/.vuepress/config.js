@@ -27,13 +27,17 @@ module.exports = {
                 selectLanguageName: '简体中文',
                 selectLanguageText: '语言',
                 lastUpdatedText: '最后更新',
-                contributorsText: '贡献者',
-                notFound: ['🎉 该页面不存在。'],
-                backToHome: '回到首页'
+                contributorsText: '上传者',
+                notFound: ['该页面不存在。'],
+                backToHome: '返回首页',
             },
             '/en/': {
                 selectLanguageName: 'English',
-                selectLanguageText: 'Language'
+                selectLanguageText: 'Language',
+                lastUpdatedText: 'Last Updated',
+                contributorsText: 'Updators',
+                notFound: ['English pages are still under construction.'],
+                backToHome: 'Back to Home',
             }
         },
         navbar: [
@@ -66,7 +70,7 @@ module.exports = {
                     { text: '游戏模式', children: [
                         { text: '合作模式', link: '/nexus-coop/coop.html' },
                         { text: '时空战场', link: '/nexus-coop/space-battlefield.html' },
-                        { text: '试炼之地', link: '/nexus-coop/trainning-ground.html' },
+                        { text: '试炼之地', link: '/nexus-coop/training-ground.html' },
                         { text: '勇敢者游戏', link: '/nexus-coop/vincengt-game.html' },
                         { text: '随机突变挑战', link: '/nexus-coop/rmc.html' },
                         { text: '灾难之轮', link: '/nexus-coop/wmc.html' },

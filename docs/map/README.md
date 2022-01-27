@@ -3,7 +3,7 @@ sidebar: {
   '/map/': [
     '/map/README.md',
     {
-      text: '合作地图介绍',
+      text: '合作任务地图',
       children: [
         '/map/promethus.md', 
         '/map/scythe-of-amon.md', 
@@ -23,9 +23,8 @@ sidebar: {
         '/map/skyfall.md'
       ]
     }
-  ],
+  ]
 }
-
 ---
 
 # 时空枢纽地图概览

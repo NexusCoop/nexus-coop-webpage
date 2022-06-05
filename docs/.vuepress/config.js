@@ -1,4 +1,4 @@
-const { defaultTheme } = require('@vuepress/theme-default')
+const { nexusTheme } = require('./theme')
 
 module.exports = {
   base: '/',
@@ -18,7 +18,7 @@ module.exports = {
       description: 'NexusCoop',
     }
   },
-  theme: defaultTheme({
+  theme: nexusTheme({
     logo: '/images/Nexus_Coop_Logo_Nav.png',
     logoDark: null,
     darkMode: true,

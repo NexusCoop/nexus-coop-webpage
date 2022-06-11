@@ -13,6 +13,7 @@ module.exports = {
   head: [
     ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
     ['link', { rel: 'icon', href: '/images/Nexus_Coop_Logo_x128.png' }]
+    ['script', { async: 'async', src: 'https://arc.io/widget.min.js#2vXJ88dL' }]
   ],
   locales: {
     '/': {
@@ -29,7 +30,7 @@ module.exports = {
   theme: nexusTheme({
     logo: '/images/Nexus_Coop_Logo_Nav.png',
     logoDark: null,
-    darkMode: true,
+    darkMode: false,
     docsRepo: 'https://github.com/MengLuoRJ/nexus-coop-webpage',
     editLink: false,
     locales: {
@@ -163,7 +164,11 @@ module.exports = {
     }
   }),
   plugins: [
-    pwaPlugin(),
+    pwaPlugin({
+      importScripts: [
+        'https://arc.io/arc-sw-core.js'
+      ]
+    }),
     pwaPopupPlugin(),
     mediumZoomPlugin({
       selector: ':not(a, .no-image-preview) > img',

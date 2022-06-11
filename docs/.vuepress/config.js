@@ -13,7 +13,6 @@ module.exports = {
   head: [
     ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
     ['link', { rel: 'icon', href: '/images/Nexus_Coop_Logo_x128.png' }]
-    ['script', { async: 'async', src: 'https://arc.io/widget.min.js#2vXJ88dL' }]
   ],
   locales: {
     '/': {
@@ -164,11 +163,7 @@ module.exports = {
     }
   }),
   plugins: [
-    pwaPlugin({
-      importScripts: [
-        'https://arc.io/arc-sw-core.js'
-      ]
-    }),
+    pwaPlugin(),
     pwaPopupPlugin(),
     mediumZoomPlugin({
       selector: ':not(a, .no-image-preview) > img',

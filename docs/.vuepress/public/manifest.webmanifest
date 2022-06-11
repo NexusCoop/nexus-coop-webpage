@@ -1,0 +1,21 @@
+{
+  "name": "时空枢纽",
+  "short_name": "NexusCoop",
+  "description": "时空枢纽, NexusCoop",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#3eaf7c",
+  "icons": [
+    {
+      "src": "/images/Nexus_Coop_Logo_x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/Nexus_Coop_Logo.png",
+      "sizes": "448x448",
+      "type": "image/png"
+    }
+  ]
+}

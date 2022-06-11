@@ -1,11 +1,19 @@
 const { nexusTheme } = require('./theme')
+const { pwaPlugin } = require('@vuepress/plugin-pwa')
+const { pwaPopupPlugin } = require('@vuepress/plugin-pwa-popup')
+const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
+const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
+const path = require('path');
 
 module.exports = {
   base: '/',
   title: '时空枢纽',
   description: '时空枢纽, NexusCoop',
   lang: 'zh-CN',
-  head: [['link', { rel: 'icon', href: '/images/Nexus_Coop_Logo_x128.png' }]],
+  head: [
+    ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
+    ['link', { rel: 'icon', href: '/images/Nexus_Coop_Logo_x128.png' }]
+  ],
   locales: {
     '/': {
       lang: 'zh-CN',
@@ -118,7 +126,6 @@ module.exports = {
           {
             text: '指挥官', children: [
               { text: '泽拉图', link: '/commander/zeratul/' },
-              { text: '蒙斯克', link: '/commander/mengsk/' },
               { text: '托什', link: '/commander/tosh/' },
               { text: '汉森', link: '/commander/hanson/' },
               { text: '主宰', link: '/commander/overmind/' },
@@ -131,7 +138,8 @@ module.exports = {
               { text: '雷诺', link: '/commander/raynor/' },
               { text: '欧雷加', link: '/commander/ulrezaj/' },
               { text: '零', link: '/commander/zero/' },
-              { text: '赛兰迪斯', link: '/commander/selendis/' }
+              { text: '赛兰迪斯', link: '/commander/selendis/' },
+              { text: '瓦伦里安', link: '/commander/valerian/' },
             ]
           }
         ]
@@ -149,6 +157,21 @@ module.exports = {
         link: '/about/'
       }
     ],
-    sidebar: 'auto'
+    sidebar: 'auto',
+    themePlugins: {
+      mediumZoom: false,
+    }
   }),
+  plugins: [
+    pwaPlugin(),
+    pwaPopupPlugin(),
+    mediumZoomPlugin({
+      selector: ':not(a, .no-image-preview) > img',
+    }),
+    registerComponentsPlugin({
+      components: {
+        NaiveImage: path.resolve(__dirname, './components/NaiveImage.vue'),
+      },
+    }),
+  ],
 }

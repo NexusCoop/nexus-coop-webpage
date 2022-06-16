@@ -42,6 +42,6 @@ jobs:
           repo: NexusCoop/nexuscoop.github.io
           target_branch: gh-pages
           build_dir: docs/.vuepress/dist
-          fqdn: nexus.aiur.tech
+          fqdn: nexuscoop.com
         env:
           GH_PAT: ${{ secrets.GH_PAT }}

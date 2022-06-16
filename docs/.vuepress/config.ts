@@ -5,14 +5,17 @@ const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
 const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
 const path = require('path');
 
-module.exports = {
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
   base: '/',
   title: '时空枢纽',
   description: '时空枢纽, NexusCoop',
   lang: 'zh-CN',
   head: [
+    ['link', { rel: 'icon', href: '/images/Nexus_Coop_Logo_x128.png' }],
     ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
-    ['link', { rel: 'icon', href: '/images/Nexus_Coop_Logo_x128.png' }]
+    ['script', { async: 'async', src: 'https://arc.io/widget.min.js#2vXJ88dL' }],
   ],
   locales: {
     '/': {
@@ -163,7 +166,11 @@ module.exports = {
     }
   }),
   plugins: [
-    pwaPlugin(),
+    pwaPlugin({
+      importScripts: [
+        'https://arc.io/arc-sw-core.js'
+      ]
+    }),
     pwaPopupPlugin(),
     mediumZoomPlugin({
       selector: ':not(a, .no-image-preview) > img',
@@ -174,4 +181,4 @@ module.exports = {
       },
     }),
   ],
-}
+});

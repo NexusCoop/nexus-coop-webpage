@@ -72,84 +72,87 @@ function getCommanderMasteryData() {
   <ParentLayout>
     <template #page-content>
       <div class="page-commander">
-        <main class="page">
-          <slot name="page-top" />
+        <ClientOnly>
+          <main class="page">
+            <slot name="page-top" />
 
-          <div class="theme-default-content theme-nexus-content">
+            <div class="theme-default-content theme-nexus-content">
 
-            <slot name="content-top" />
+              <slot name="content-top" />
 
-            <n-image :style="{ margin: '20px 10px 10px 10px' }" :width="800"
-              :src="(frontmatter.commanderImage as string)" preview-disabled></n-image>
-            <n-divider></n-divider>
-            <n-space justify="center">
-              <n-h1 strong :style="{ marginBottom: 0 }">
-                {{ frontmatter['commanderName'] }}
-              </n-h1>
-            </n-space>
-            <n-space justify="center">
-              <n-text type="info"> {{ frontmatter.commanderDescription }} </n-text>
-            </n-space>
-
-            <n-divider :style="{ marginBottom: 0 }"></n-divider>
-
-            <n-tabs type="line" justify-content="space-around" animated>
-              <n-tab-pane name="CommanderStory" tab="指挥官故事">
-                <n-blockquote v-html="frontmatter['commanderStory']"></n-blockquote>
-              </n-tab-pane>
-              <!-- <n-tab-pane name="CommanderUpgrades" tab="指挥官升级">
-                <CommanderUpgrades :data="getCommanderUpgradesData()" />
-              </n-tab-pane> -->
-            </n-tabs>
-
-            <n-divider :style="{ marginBottom: 0 }"></n-divider>
-            <n-tabs type="line" justify-content="space-around" animated>
-              <!-- <n-tab-pane name="CommanderStory" tab="指挥官故事">
-                <n-blockquote v-html="frontmatter['commanderStory']"></n-blockquote>
-              </n-tab-pane> -->
-              <n-tab-pane name="CommanderUpgrades" tab="指挥官升级">
-                <CommanderUpgrades :data="getCommanderUpgradesData()" />
-              </n-tab-pane>
-            </n-tabs>
-
-            <n-divider></n-divider>
-
-            <n-card>
-              <template #header>
-                <n-space justify="center">
-                  <n-text> 指挥官精通 </n-text>
-                </n-space>
-              </template>
+              <n-image :style="{ margin: '20px 10px 10px 10px' }" :width="800"
+                :src="(frontmatter.commanderImage as string)" preview-disabled></n-image>
               <n-divider></n-divider>
-              <CommanderMastery :data="getCommanderMasteryData()" />
-            </n-card>
+              <n-space justify="center">
+                <n-h1 strong :style="{ marginBottom: 0 }">
+                  {{ frontmatter['commanderName'] }}
+                </n-h1>
+              </n-space>
+              <n-space justify="center">
+                <n-text type="info"> {{ frontmatter.commanderDescription }} </n-text>
+              </n-space>
 
-            <n-divider></n-divider>
+              <n-divider :style="{ marginBottom: 0 }"></n-divider>
 
-            <n-card>
-              <template #header>
-                <n-space justify="center">
-                  <n-text> 指挥官威望 </n-text>
-                </n-space>
-              </template>
-              <CommanderPrestige />
-            </n-card>
+              <n-tabs type="line" justify-content="space-around" animated>
+                <n-tab-pane name="CommanderStory" tab="指挥官故事">
+                  <n-blockquote v-html="frontmatter['commanderStory']"></n-blockquote>
+                </n-tab-pane>
+                <!-- <n-tab-pane name="CommanderUpgrades" tab="指挥官升级">
+                <CommanderUpgrades :data="getCommanderUpgradesData()" />
+              </n-tab-pane> -->
+              </n-tabs>
 
-            <n-divider></n-divider>
+              <n-divider :style="{ marginBottom: 0 }"></n-divider>
+              <n-tabs type="line" justify-content="space-around" animated>
+                <!-- <n-tab-pane name="CommanderStory" tab="指挥官故事">
+                <n-blockquote v-html="frontmatter['commanderStory']"></n-blockquote>
+              </n-tab-pane> -->
+                <n-tab-pane name="CommanderUpgrades" tab="指挥官升级">
+                  <CommanderUpgrades :data="getCommanderUpgradesData()" />
+                </n-tab-pane>
+              </n-tabs>
 
-            <Content v-if="frontmatter['moreContent']" />
+              <n-divider></n-divider>
 
-            <slot name="content-bottom" />
+              <n-card>
+                <template #header>
+                  <n-space justify="center">
+                    <n-text> 指挥官精通 </n-text>
+                  </n-space>
+                </template>
+                <n-divider></n-divider>
+                <CommanderMastery :data="getCommanderMasteryData()" />
+              </n-card>
 
-          </div>
+              <n-divider></n-divider>
 
-          <PageMeta />
+              <n-card>
+                <template #header>
+                  <n-space justify="center">
+                    <n-text> 指挥官威望 </n-text>
+                  </n-space>
+                </template>
+                <CommanderPrestige />
+              </n-card>
 
-          <PageNav />
+              <n-divider></n-divider>
 
-          <slot name="page-bottom" />
+              <Content v-if="frontmatter['moreContent']" />
 
-        </main>
+              <slot name="content-bottom" />
+
+            </div>
+
+            <PageMeta />
+
+            <PageNav />
+
+            <slot name="page-bottom" />
+
+          </main>
+        </ClientOnly>
+
       </div>
     </template>
   </ParentLayout>

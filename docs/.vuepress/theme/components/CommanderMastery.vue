@@ -73,44 +73,47 @@ function getMasteryText(index: number): string {
 </script>
 
 <template>
-  <n-space justify="space-between">
-    <n-text> 精通等级： {{ totalMastryPoint }}</n-text>
-    <n-input-number :on-update="countMastryPoint()" v-model:value="totalMastryPoint" placeholder="最小值" :min="0"
-      :max="90" />
-  </n-space>
-  <n-divider></n-divider>
-  <div v-for="(item, index) in data">
-    <n-divider v-if="(index % 2) === 0 && index != 0"></n-divider>
-    <n-space v-if="(index % 2) === 0" justify="end">
-      <n-text>
-        {{ usingPoint[index + 1] + usingPoint[index + 2] }}/{{ catePoint[(Math.floor(index / 2) + 1)] }}
-      </n-text>
+  <ClientOnly>
+    <n-space justify="space-between">
+      <n-text> 精通等级： {{ totalMastryPoint }}</n-text>
+      <n-input-number :on-update="countMastryPoint()" v-model:value="totalMastryPoint" placeholder="最小值" :min="0"
+        :max="90" />
     </n-space>
-    <n-table>
-      <tbody>
-        <tr>
-          <td width="30%">
-            <n-popover trigger="hover" :show-arrow="false">
-              <template #trigger>
-                <n-button text>
-                  <n-text> {{ item.name }} </n-text>
-                </n-button>
-              </template>
-              <n-text>{{ item.description }}</n-text>
-            </n-popover>
-          </td>
-          <td width="40%">
-            <n-space justify="center">
-              <n-text v-html="getMasteryText(index)"></n-text>
-            </n-space>
-          </td>
-          <td width="30%">
-            <n-input-number v-model:value="usingPoint[index + 1]" :min="0" :max="30" />
-          </td>
-        </tr>
-      </tbody>
-    </n-table>
-  </div>
+    <n-divider></n-divider>
+    <div v-for="(item, index) in data">
+      <n-divider v-if="(index % 2) === 0 && index != 0"></n-divider>
+      <n-space v-if="(index % 2) === 0" justify="end">
+        <n-text>
+          {{ usingPoint[index + 1] + usingPoint[index + 2] }}/{{ catePoint[(Math.floor(index / 2) + 1)] }}
+        </n-text>
+      </n-space>
+      <n-table>
+        <tbody>
+          <tr>
+            <td width="30%">
+              <n-popover trigger="hover" :show-arrow="false">
+                <template #trigger>
+                  <n-button text>
+                    <n-text> {{ item.name }} </n-text>
+                  </n-button>
+                </template>
+                <n-text>{{ item.description }}</n-text>
+              </n-popover>
+            </td>
+            <td width="40%">
+              <n-space justify="center">
+                <n-text v-html="getMasteryText(index)"></n-text>
+              </n-space>
+            </td>
+            <td width="30%">
+              <n-input-number v-model:value="usingPoint[index + 1]" :min="0" :max="30" />
+            </td>
+          </tr>
+        </tbody>
+      </n-table>
+    </div>
+  </ClientOnly>
+
 </template>
 
 <style lang="css">

@@ -12,11 +12,15 @@ const props = defineProps({
 </script>
 
 <template>
-  <n-watermark content="机密" cross selectable :font-size="16" :line-height="16" :width="192" :height="128"
-    :x-offset="12" :y-offset="28" :rotate="-15">
-    <n-result status="warning" title="尚未揭露" description="机密在揭露前永远是机密">
-    </n-result>
-  </n-watermark>
+  <ClientOnly>
+    <n-watermark content="机密" cross selectable :font-size="16" :line-height="16" :width="192" :height="128"
+      :x-offset="12" :y-offset="28" :rotate="-15">
+      <n-result status="warning" title="尚未揭露" description="机密在揭露前永远是机密">
+      </n-result>
+    </n-watermark>
+
+  </ClientOnly>
+
 
 </template>
 

@@ -6,6 +6,7 @@
   "author": "MengLuoRJ <mengluor@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@vuepress/plugin-google-analytics": "^2.0.0-beta.48",
     "@vuepress/plugin-pwa": "^2.0.0-beta.46",
     "@vuepress/plugin-pwa-popup": "^2.0.0-beta.46",
     "@vuepress/plugin-register-components": "^2.0.0-beta.46",

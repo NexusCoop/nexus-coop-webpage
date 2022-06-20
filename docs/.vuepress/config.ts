@@ -3,6 +3,8 @@ const { pwaPlugin } = require('@vuepress/plugin-pwa')
 const { pwaPopupPlugin } = require('@vuepress/plugin-pwa-popup')
 const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
 const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
+const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics')
+
 const path = require('path');
 
 import { defineUserConfig } from 'vuepress'
@@ -179,6 +181,9 @@ export default defineUserConfig({
       components: {
         NaiveImage: path.resolve(__dirname, './components/NaiveImage.vue'),
       },
+    }),
+    googleAnalyticsPlugin({
+      id: 'G-RHPWXS15DE',
     }),
   ],
 });
